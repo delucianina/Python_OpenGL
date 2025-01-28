@@ -97,7 +97,8 @@ class Triangle:
         self.vao = glGenVertexArrays(1)
         glBindVertexArray(self.vao)
         self.vbo = glGenBuffers(1)
-        glBindBuffer(GL_ARRAY_BUFFER, self.vertices.nbytes, self.vertices,
+        glBindBuffer(GL_ARRAY_BUFFER, self.vbo)
+        glBufferData(GL_ARRAY_BUFFER, self.vertices.nbytes, self.vertices,
                      GL_STATIC_DRAW)
         # ------- DESCRIBE ATTRIBUTES IN VBO ------- #
         # Enable an attriubutes for position (0) and color (1, a few lines down):
